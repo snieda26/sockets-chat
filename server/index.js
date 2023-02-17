@@ -19,6 +19,8 @@ const io = new Server(server, {
     methods: ["GET"]
 })
 
+console.log(io)
+
 server.listen(PORT, () => {
     console.log("Server started on " + PORT)
 })
