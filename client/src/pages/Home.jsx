@@ -7,6 +7,13 @@ import styles from '../styles/Home.module.css'
 function Home() {
     const [values, setValues] = useState({ name: '', room: '' })
     const handleChange = e => setValues(prev => ({ ...prev, [e.target.name]: e.target.value }))
+
+    const handleClickIn = (e) => {
+        const isDisabled = Object.values(values).some(v => !v)
+        console.log(isDisabled)
+        if (isDisabled) e.preventDefault()
+    }
+
     return (
         <div className={styles.wrap}>
             <div className={styles.container}>
@@ -33,7 +40,7 @@ function Home() {
                             autoComplete="off" />
                     </div>
 
-                    <Link to="/chat">
+                    <Link to="/chat" onClick={handleClickIn}>
                         <button className={styles.button}>Sign In</button>
                     </Link>
                 </form>
