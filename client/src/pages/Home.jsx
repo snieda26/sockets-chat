@@ -14,6 +14,7 @@ function Home() {
         if (isDisabled) e.preventDefault()
     }
 
+
     return (
         <div className={styles.wrap}>
             <div className={styles.container}>
