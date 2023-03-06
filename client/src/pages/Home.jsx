@@ -9,7 +9,9 @@ function Home() {
     const handleChange = e => setValues(prev => ({ ...prev, [e.target.name]: e.target.value }))
 
     const handleClickIn = (e) => {
+
         const isDisabled = Object.values(values).some(v => !v)
+
         console.log(isDisabled)
         if (isDisabled) e.preventDefault()
     }
